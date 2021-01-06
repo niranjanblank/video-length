@@ -4,9 +4,11 @@ Simple desktop application which finds the length of selected video made while l
 ### Installation
 <p>
 Pull the code and run the command
-     <h5>npm install </h5>
+     <h3>npm install </h3>
 to install all the dependencies
 </p>
-### Running
+### Running the program
+<p>
 Run the following command to run the application
-      npm run electron
+      <h3>npm run electron</h3>
+</p>
