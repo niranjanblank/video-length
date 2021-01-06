@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./main.css"/>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    
 </head>
-<body>
-    <h1> Video Info </h1>
-    <form>
-        <div>
-            <label>Select a video</label>
-            <input type="file" accept="video/*"/>
+<body class="body-background">
+    <main class="outer-container ">
+    <form class="form-container">
+        <div class="inside-form">
+            <img src="./images/video.png" style="height:160px; width:160px;">
+            <h1 class="select-logo">Video Length Finder</h1>
+            <hr style="width:100%;background:black;">
+            <input class="mt-2" id="files" type="file" accept="video/*">
+            <!-- <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                  </div>
+              </div> -->
         </div>
-        <button type="submit">Get Info</button>
+        <button class="btn btn-primary mt-3" type="submit">Get Length</button>
+        <h2 id="result" class="text-success mt-1"></h2>
     </form>
-    <h1 id="result"></h1>
+        
+      
+    
+    
+</main>
+    
     <script>
+
         const electron = require('electron')
 
         const { ipcRenderer } = electron //ipcRenderer allows to communicate from browser window to the electron Process
@@ -30,8 +51,9 @@
         })
 
         ipcRenderer.on('getMetaData',(event, duration)=>{
-            document.querySelector('#result').innerHTML = duration
+            document.querySelector('#result').innerHTML = `Duration: ${duration} seconds`
         })
+        
     </script>
 </body>
 </html>
