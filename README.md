@@ -3,9 +3,8 @@ Simple desktop application which finds the length of selected video made while l
 
 ## Installation
 <p>
-Pull the code and run the command
+Pull the code and run the command to install all the dependencies
      <h3>npm install </h3>
-to install all the dependencies
 </p>
 
 ## Running the program
